@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Ranking</title>
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: Arial;
+        padding: 3rem;
+        background: #bb3edf;
+        background: linear-gradient(180deg, #00b3ff 0%, #3a47d5 100%)
+        
+      }
+      .container {
+        width: 100%;
+        max-width: 840px;
+        margin: 0 auto;
+      }
+      .list-box-name {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        margin-bottom: 3rem;
+      }
+      .box-name {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        color: #fff;
+        background-color: transparent;
+        border: 1px solid #f6f6f6ca;
+        border-radius: 1rem;
+        padding: 1rem;
+      }
+      .image-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 12px;
+        width: 100%;
+        margin-bottom: 3rem;
+        color: #fff;
+      }
+      .image-content img {
+        width: 100%;
+        max-width: 300px;
+      }
+      .image-content.sgm img{
+        width: 150px;
+      }
+      .pulsando {
+        animation: pular 2s ease-in-out infinite;
+      }
+  
+      @keyframes pular {
+        0%, 100% {
+          transform: translateY(0) scale(1);
+        }
+        50% {
+          transform: translateY(-10px) scale(1.05);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="image-content pulsando">
+        <img src="assets/svg/favicon.svg" alt="Trofeu pulando">
+        <span>Nossa senhora consolata</span>
+      </div>
+        <div class="list-box-name">
+          <% rows.forEach(function(item) { %>
+          <div class="box-name">
+            <span><%= item.nome %></span>
+            <span><%= item.total %></span>
+          </div>
+          <% }); %>
+        </div>
+        <div class="image-content sgm">
+          <img src="assets/img/logo-segue-me.png" alt="logo-segue-me">
+          <span>Paróquia Nossa Senhora Consolata</span>
+          <span>"Vem e Segue-me - Teste"</span>
+        </div>
+    </div>
+  </body>
+</html>
